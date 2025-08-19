@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import get_object_or_404, render, redirect
 from .models import Blog
 from .forms import BlogForm
 
@@ -9,7 +9,7 @@ def home(request):
   if request.POST:
     form = BlogForm(request.POST)
     blog = form.save()
-    return redirect("blogs:show", blogs.id)
+    return redirect("blogs:show", blog.id)
   else:
     blogs = Blog.objects.order_by("-id")
     return render(
