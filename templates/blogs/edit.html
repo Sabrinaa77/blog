@@ -1,0 +1,14 @@
+<h1>編輯</h1>
+<form action="{% url 'blogs:show' blog.id %}">
+{% csrf_token %}
+{% for field in form %}
+<div>
+  {% field.label_tag %}
+  {% field %}
+</div>
+{% endfor %}
+
+<a href="/blog/">回面試列表</a>
+<a href="/show/show.id">回到上一頁</a>
+<input type="submit" value="更新">
+</form>

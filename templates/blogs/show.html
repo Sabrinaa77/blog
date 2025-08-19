@@ -1,0 +1,12 @@
+<h2>文章資料</h2>
+<h3>文章標題:{{ blog.title }}</h3>
+<h3>內容:{{ blog.content }}</h3>
+<h3>新增日期:{{ blog.created_up }}</h3>
+<h3>更新日期:{{ blog.updated_at }}</h3>
+<h3>是否發佈:{{ blog.published }}</h3>
+
+<a href="{% url 'blogs: edit' blog.id %}">編輯</a>
+<form action="{% url 'blogs:delete' blog.id %}" method="post" onsubmit="return action('確認是否刪除？')">
+{% csrf_token %}
+  <button>刪除</button>
+</form>
