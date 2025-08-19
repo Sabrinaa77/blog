@@ -44,3 +44,9 @@ def edit(request, id):
   blog = get_object_or_404(Blog, pk=id)
   form = BlogForm(instance=blog) 
   return render(request, "blogs/edit.html", {"blog": blog, "form": form})
+
+def delete(reuqnest, id):
+  blog = get_object_or_404(Blog, pk=id)
+  blog.delete()
+
+  return redirect("drinks:home")
