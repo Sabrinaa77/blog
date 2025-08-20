@@ -1,0 +1,25 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sabrinaa77/blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Sabrinaa77/blog/issues"
+  },
+  "homepage": "https://github.com/Sabrinaa77/blog#readme",
+  "devDependencies": {
+    "daisyui": "^5.0.50",
+    "tailwindcss": "^4.1.12"
+  }
+}
