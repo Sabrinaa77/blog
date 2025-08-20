@@ -1,0 +1,13 @@
+# 忽略虛擬環境
+.venv/
+
+# Python 編譯檔案
+__pycache__/
+*.py[cod]
+
+# Django 靜態檔案
+staticfiles/
+media/
+
+# SQLite 資料庫
+*.sqlite3
