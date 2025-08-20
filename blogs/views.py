@@ -58,4 +58,4 @@ def delete(reuqnest, id):
   blog = get_object_or_404(Blog, pk=id)
   blog.delete()
 
-  return redirect("drinks:home")
+  return redirect("blogs:home")
