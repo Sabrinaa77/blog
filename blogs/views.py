@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404, render, redirect
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Blog
 from .forms import BlogForm
 
@@ -20,8 +20,9 @@ def show(request, id):
   blog = get_object_or_404(Blog, pk=id)
   if request.POST:
     form = BlogForm(request.POST, instance=blog)
-    form.save()
-    return render(request, "blogs/show.html", blog.id)
+    if form.is_valid():
+      form.save()
+      return render(request, "blogs/show.html", {"blog": blog})
   else:
     return render(
       request,
@@ -42,7 +43,15 @@ def new(request):
 
 def edit(request, id):
   blog = get_object_or_404(Blog, pk=id)
-  form = BlogForm(instance=blog) 
+
+  if request.POST:
+    form = BlogForm(request.POST, instance=blog) 
+    if form.is_valid():
+      form.save()
+      return redirect("blogs:show", blog.id)
+  else:
+    form = BlogForm(instance=blog)
+
   return render(request, "blogs/edit.html", {"blog": blog, "form": form})
 
 def delete(reuqnest, id):

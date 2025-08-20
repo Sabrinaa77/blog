@@ -3,9 +3,9 @@
 <a href="{% url 'blogs:new' %}">新增文章</a>
 
 <ul>
-  {% for blogs in blog %}
+  {% for blog in blogs %}
   <li>
-    <a href="{% url 'blogs:show' blo.id %}">
+    <a href="{% url 'blogs:show' blog.id %}">
       <section>
         <h3>{{ blog.title }}</h3>
         <h3>{{ blog.content }}</h3>
@@ -15,6 +15,5 @@
       </section>
     </a>
   </li>
-
-  <li>{% endfor %}</li>
+  {% endfor %}
 </ul>

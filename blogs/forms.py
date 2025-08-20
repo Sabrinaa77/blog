@@ -6,6 +6,7 @@ class BlogForm(ModelForm):
     model = Blog
     fields = [
       "title",
+      "author",
       "content",
       # "created_at",
       # "updated_at",
@@ -14,6 +15,7 @@ class BlogForm(ModelForm):
 
     labels = {
       "title": "文章標題",
+      "author": "作者",
       "content": "內容",
       # "created_at": "新增日期",
       # "updated_at": "更新日期",
