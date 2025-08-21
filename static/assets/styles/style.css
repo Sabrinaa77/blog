@@ -1,0 +1,33 @@
+body {
+  max-width: 1200px; /* 最大寬度 */
+  width: 100%;       /* 滿版 */
+  margin: 0 auto;    /* 置中 */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: red !important;
+}
+.container {
+  width: 100%;
+}
+
+@media (min-width: 40rem) {
+  .container { max-width: 40rem; }
+}
+
+@media (min-width: 48rem) {
+  .container { max-width: 48rem; }
+}
+
+@media (min-width: 64rem) {
+  .container { max-width: 64rem; }
+}
+
+@media (min-width: 80rem) {
+  .container { max-width: 80rem; }
+}
+
+@media (min-width: 96rem) {
+  .container { max-width: 96rem; }
+}
+
