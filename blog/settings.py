@@ -123,3 +123,17 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# 靜態檔案網址前綴
+STATIC_URL = '/static/'
+
+# 靜態檔案搜尋目錄（額外自訂的靜態資料夾）
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
+# 收集歷程中所有靜態檔案會輸出的目錄（生產環境用）
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+DEBUG=True

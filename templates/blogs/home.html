@@ -1,4 +1,5 @@
-{% extends "layouts/default.html" %} {% block main %}
+{% extends "layouts/default.html" %} 
+{% block main %}
 
 <!DOCTYPE html>
 <html lang="zh-TW">
@@ -21,23 +22,23 @@
         padding: 20px;
         text-align: left;
       }
-      nav {
+      {% comment %} nav {
         display: flex;
         justify-content: center;
         background-color: #555;
       }
       nav a {
-        color: #fff;
+        color: #000;
         padding: 14px 20px;
         text-decoration: none;
         transition: background-color 0.3s;
-      }
+      } 
       nav a:hover {
         background-color: #777;
-      }
+      }  {% endcomment %}
       main {
         padding: 20px;
-        max-width: 1000px;
+        max-width: 1200px;
         margin: auto;
       }
       article {
@@ -79,7 +80,7 @@
         padding: 8px 16px;
       }
       a.button:hover {
-        background-color: #F0F0F0;
+        background-color: #f0f0f0;
       }
     </style>
   </head>
@@ -87,14 +88,14 @@
     <header>
       <h1>Rise and Shine</h1>
     </header>
-    {% comment %}
+
     <nav>
       <a href="#">首頁</a>
       <a href="#">關於我</a>
       <a href="#">文章列表</a>
       <a href="#">聯絡我</a>
     </nav>
-    {% endcomment %}
+
     <main>
       {% for blog in blogs %}
       <article>
