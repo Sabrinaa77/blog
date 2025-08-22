@@ -1,97 +1,24 @@
 {% extends "layouts/default.html" %} 
-{% block main %}
+{% load static %}
 
+{% block main %}
 <!DOCTYPE html>
 <html lang="zh-TW">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>blog</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-      }
-      header {
-        background-color: transparent;
-        color: #000000;
-        font-size: 50px;
-        font-weight: bold;
-        padding: 20px;
-        text-align: left;
-      }
-      main {
-        padding: 20px;
-        max-width: 1200px;
-        margin: auto;
-      }
-      article {
-        background-color: #fff;
-        margin-bottom: 20px;
-        padding: 20px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-      }
-      h2 {
-        margin-top: 0;
-        margin-bottom: 10px;
-        font-size: 28px;
-        font-weight: bold;
-      }
-      article p {
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-align: justify;
-        margin-bottom: 15px;
-      }
-      footer {
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 10px;
-        position: fixed;
-        width: 100%;
-        bottom: 0;
-      }
-      a.button {
-        color: #000;
-        border: 1px solid #000;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-top: 20px;
-        padding: 8px 16px;
-      }
-      a.button:hover {
-        background-color: #f0f0f0;
-      }
-    </style>
   </head>
   <body>
-    <header>
-      <h1>Rise and Shine</h1>
-    </header>
-
-    <nav>
-      <a href="#">首頁</a>
-      <a href="#">關於我</a>
-      <a href="#">文章列表</a>
-      <a href="#">聯絡我</a>
-    </nav>
-
-    <main>
+    <div class="main">
       {% for blog in blogs %}
-      <article>
-        <h2>{{ blog.title }}</h2>
-        <p>{{ blog.content }}</p>
-        <a href="/blogs/{{ blog.id }}/" class=button>繼續觀看</a>
-      </article>
+      <div class="article">
+        <div class="title">{{ blog.title }}</div>
+        <div class="content-list">{{ blog.content }}</div>
+        <a href="/blogs/{{ blog.id }}/" class="button">繼續觀看</a>
+      </div>
       {% endfor %}
-    </main>
-    <footer>&copy; 2025 我的部落格。版權所有。</footer>
+    </div>
   </body>
 </html>
 {% endblock %}
