@@ -52,7 +52,6 @@ def edit(request, id):
       return redirect("blogs:show", blog.id)
   else:
     form = BlogForm(instance=blog)
-
   return render(request, "blogs/edit.html", {"blog": blog, "form": form})
 
 def delete(reuquest, id):

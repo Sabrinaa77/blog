@@ -20,7 +20,7 @@
           是否發佈:{{ blog.published }}
         </div>
         <div class="button-group">
-          <a href="{% url 'blogs:edit' blog.id % }" class="button">編輯</a>
+          <a href="{% url 'blogs:edit' blog.id %}" class="button">編輯</a>
           <a href="{% url 'blogs:home' %}" class="button">回到首頁</a>
           <form
             action="{% url 'blogs:delete' blog.id %}"
