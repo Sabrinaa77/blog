@@ -1,7 +1,7 @@
 body {
   max-width: 1200px; /* 最大寬度 */
-  width: 100%;       /* 滿版 */
-  margin: 0 auto;    /* 置中 */
+  width: 100%; /* 滿版 */
+  margin: 0 auto; /* 置中 */
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -12,23 +12,33 @@ body {
 }
 
 @media (min-width: 40rem) {
-  .container { max-width: 40rem; }
+  .container {
+    max-width: 40rem;
+  }
 }
 
 @media (min-width: 48rem) {
-  .container { max-width: 48rem; }
+  .container {
+    max-width: 48rem;
+  }
 }
 
 @media (min-width: 64rem) {
-  .container { max-width: 64rem; }
+  .container {
+    max-width: 64rem;
+  }
 }
 
 @media (min-width: 80rem) {
-  .container { max-width: 80rem; }
+  .container {
+    max-width: 80rem;
+  }
 }
 
 @media (min-width: 96rem) {
-  .container { max-width: 96rem; }
+  .container {
+    max-width: 96rem;
+  }
 }
 
 .main {
@@ -59,6 +69,15 @@ body {
   padding: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+}
+
+.content-list {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-align: justify;
+  margin-bottom: 15px;
 }
 
 .content {
@@ -95,7 +114,7 @@ body {
   padding: 8px 16px;
 }
 
-a.button:hover {
+.button:hover {
   background-color: #f0f0f0;
 }
 
@@ -112,18 +131,18 @@ a.button:hover {
 
 .form-field {
   margin-bottom: 5px;
-  display: flex;   
+  display: flex;
   align-items: center;
 }
 
 .form-field label {
-  width: 100px;       
-  font-weight: bold; 
+  width: 100px;
+  font-weight: bold;
 }
 
 .form-field input,
 .form-field textarea {
-  flex: 1;             /* 讓 input/textarea 填滿剩餘空間 */
+  flex: 1; /* 讓 input/textarea 填滿剩餘空間 */
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
