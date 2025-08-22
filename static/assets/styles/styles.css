@@ -1,0 +1,111 @@
+body {
+  max-width: 1200px; /* 最大寬度 */
+  width: 100%;       /* 滿版 */
+  margin: 0 auto;    /* 置中 */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+.container {
+  width: 100%;
+}
+
+@media (min-width: 40rem) {
+  .container { max-width: 40rem; }
+}
+
+@media (min-width: 48rem) {
+  .container { max-width: 48rem; }
+}
+
+@media (min-width: 64rem) {
+  .container { max-width: 64rem; }
+}
+
+@media (min-width: 80rem) {
+  .container { max-width: 80rem; }
+}
+
+@media (min-width: 96rem) {
+  .container { max-width: 96rem; }
+}
+
+.main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.slogn {
+  background-color: transparent;
+  color: #000000;
+  font-size: 50px;
+  font-weight: bold;
+  padding: 20px;
+  text-align: left;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.article {
+  background-color: #fff;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+.content_time {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-align: justify;
+  margin-bottom: 30px;
+}
+
+.button-group {
+  margin-top: 30px;
+  display: flex;
+  gap: 8px;
+}
+
+.inline-form {
+  display: inline; /* 或 inline-block */
+  margin: 0; /* 移除 form 預設 margin */
+}
+
+.button {
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  padding: 8px 16px;
+}
+
+a.button:hover {
+  background-color: #f0f0f0;
+}
+
+.button-delete {
+  background-color: #000; /* 紅色警示 */
+  color: #fff;
+  border: none;
+}
+.button-delete:hover {
+  background-color: #f0f0f0;
+  color: #000;
+  border: 1px solid #000;
+}

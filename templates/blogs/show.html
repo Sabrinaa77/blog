@@ -1,13 +1,38 @@
-<h2>文章資料</h2>
-<h3>文章標題:{{ blog.title }}</h3>
-<h3>內容:{{ blog.content }}</h3>
-<h3>新增日期:{{ blog.created_up }}</h3>
-<h3>更新日期:{{ blog.updated_at }}</h3>
-<h3>是否發佈:{{ blog.published }}</h3>
+{% extends "layouts/default.html" %} 
+{% load static %} 
 
-<a href="{% url 'blogs:edit' blog.id %}">編輯</a>
-<a href="{% url 'blogs:home' %}">回到文章列表</a>
-<form action="{% url 'blogs:delete' blog.id %}" method="post" onsubmit="return action('確認是否刪除？')">
-{% csrf_token %}
-  <button>刪除</button>
-</form>
+{% block main %}
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <main>
+    <div class=main>
+      <div class=article>
+        <div class="title">{{ blog.title }}</div>
+        <div class="content">{{ blog.content }}</div>
+        <div class="content_time">
+          新增日期:{{ blog.created_at }}<br>
+          更新日期:{{ blog.updated_at }}<br>
+          是否發佈:{{ blog.published }}
+        </div>
+        <div class="button-group">
+          <a href="{% url 'blogs:edit' blog.id % }" class="button">編輯</a>
+          <a href="{% url 'blogs:home' %}" class="button">回到首頁</a>
+          <form
+            action="{% url 'blogs:delete' blog.id %}"
+            method="post"
+            onsubmit="return confirm('確認是否刪除？')"
+            class="inlin-form"
+          >
+          {% csrf_token %}
+            <button type="submit" class="button button-delete">刪除</button>
+          </form>
+        </div>
+    </div>
+  </body>
+</html>
+{% endblock %}
