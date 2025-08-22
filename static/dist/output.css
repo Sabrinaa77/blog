@@ -2001,6 +2001,11 @@ button,
       100%;
 }
 
+.w-12{
+  width:
+      3rem;
+}
+
 .max-w-7xl{
   max-width:
       80rem;
@@ -2016,9 +2021,19 @@ button,
       0.5rem;
 }
 
+.gap-20{
+  gap:
+      5rem;
+}
+
 .rounded-full{
   border-radius:
       9999px;
+}
+
+.border-2{
+  border-width:
+      2px;
 }
 
 .bg-white{
@@ -2078,6 +2093,39 @@ button,
       1.25rem;
   line-height:
       1.75rem;
+}
+
+.text-2xl{
+  font-size:
+      1.5rem;
+  line-height:
+      2rem;
+}
+
+.text-lg{
+  font-size:
+      1.125rem;
+  line-height:
+      1.75rem;
+}
+
+.text-base{
+  font-size:
+      1rem;
+  line-height:
+      1.5rem;
+}
+
+.text-sm{
+  font-size:
+      0.875rem;
+  line-height:
+      1.25rem;
+}
+
+.leading-loose{
+  line-height:
+      2;
 }
 
 .shadow{

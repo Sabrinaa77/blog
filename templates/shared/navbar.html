@@ -1,9 +1,9 @@
 <div class="navbar bg-base-100 shadow-sm w-full">
   <div class="flex-1">
-    <a class="btn btn-ghost text-xl"> MY BLOG</a>
+    <a href="/blogs/" class="btn btn-ghost text-2xl"> MY BLOG</a>
   </div>
   <div class="flex gap-2">
-    <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
+    <input type="text" placeholder="Search" class="input input-bordered border-2 border-gray-40 w-24 md:w-auto" />
     <div class="dropdown dropdown-end">
       <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
         <div class="w-10 rounded-full">
@@ -15,9 +15,9 @@
       <ul
         tabindex="0"
         class="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow">
-        <li><a>Profile</a></li>
-        <li><a>Settings</a></li>
-        <li><a>Logout</a></li>
+        <li><a class="text-base leading-loose">個人資料</a></li>
+        <li><a href="/blogs/new/" class="text-base leading-loose">新增文章</a></li>
+        <li><a class="text-base leading-loose">登出</a></li>
       </ul>
     </div>
   </div>
