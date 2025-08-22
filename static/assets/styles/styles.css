@@ -1,12 +1,16 @@
-body {
-  max-width: 1200px; /* 最大寬度 */
-  width: 100%; /* 滿版 */
-  margin: 0 auto; /* 置中 */
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+html {
   background-color: #f4f4f4;
 }
+
+body {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: transparent; /* 避免蓋掉 html 背景色 */
+}
+
 .container {
   width: 100%;
 }
