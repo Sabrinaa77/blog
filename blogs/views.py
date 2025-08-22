@@ -8,8 +8,9 @@ from .forms import BlogForm
 def home(request):
   if request.POST:
     form = BlogForm(request.POST)
-    blog = form.save()
-    return redirect("blogs:show", blog.id)
+    if form.is_valid():
+      blog = form.save()
+      return redirect("blogs:show", blog.id)
   else:
     blogs = Blog.objects.order_by("-id")
     return render(
@@ -54,7 +55,7 @@ def edit(request, id):
 
   return render(request, "blogs/edit.html", {"blog": blog, "form": form})
 
-def delete(reuqnest, id):
+def delete(reuquest, id):
   blog = get_object_or_404(Blog, pk=id)
   blog.delete()
 
