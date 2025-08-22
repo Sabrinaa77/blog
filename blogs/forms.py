@@ -14,7 +14,7 @@ class BlogForm(ModelForm):
     ]
 
     labels = {
-      "title": "文章標題",
+      "title": "標題",
       "author": "作者",
       "content": "內容",
       # "created_at": "新增日期",

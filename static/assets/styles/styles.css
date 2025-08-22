@@ -109,3 +109,10 @@ a.button:hover {
   color: #000;
   border: 1px solid #000;
 }
+
+.textarea[name="content"] {
+  width: 100%;   /* 內文填滿容器 */
+  height: 300px; /* 高度加大 */
+  font-size: 16px;
+  padding: 10px;
+}

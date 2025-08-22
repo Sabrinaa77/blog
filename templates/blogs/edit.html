@@ -1,3 +1,49 @@
+{% extends "layouts/default.html" %}
+{% load static %}
+
+{% block main%}
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="article">
+      <div class="title">編輯</div>
+      <form method="post" action="{% url 'blogs:show' blog.id %}">
+        {% csrf_token %}
+        {% for field in form %}
+        <div>
+          {{ field.label_tag }}
+          {{ field }}
+          {% endfor %}
+        </div>   
+      </form>
+      <div class="button-group">
+        <input type="submit" value="更新" class="button">
+        <form
+          action="{% url 'blogs:delete' blog.id %}"
+          method="post"
+          onsubmit="return confirm('確認是否刪除？')"
+          class="inline-form"
+        >
+        {% csrf_token %}
+          <button type="submit" class="button button-delete">刪除</button>
+        </form>
+        <a href="{% url 'blogs:home' %}" class="button">回首頁</a>
+      </div>      
+      
+        </div>
+      
+        
+    </div>
+  </body>
+</html>
+{% endblock %}
+
+
 <h1>編輯</h1>
 <form method="post" action="{% url 'blogs:show' blog.id %}">
 {% csrf_token %}
