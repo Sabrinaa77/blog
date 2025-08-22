@@ -21,20 +21,20 @@
         {{ field }}
       </div> 
       {% endfor %}
-    </form>
-    <div class="button-group">
-      <input type="submit" value="更新" class="button">
-      <form
+      <div class="button-group">
+        <input type="submit" value="更新" class="button">
+        <form
         action="{% url 'blogs:delete' blog.id %}"
         method="post"
         onsubmit="return confirm('確認是否刪除？')"
         class="inline-form"
-      >
-      {% csrf_token %}
+        >
+        {% csrf_token %}
         <button type="submit" class="button button-delete">刪除</button>
-      </form>
-      <a href="{% url 'blogs:home' %}" class="button">回首頁</a>
-    </div>        
+        </form>
+        <a href="{% url 'blogs:home' %}" class="button">回首頁</a>
+      </div>
+    </form>      
   </div>
 </body>
 </html>
