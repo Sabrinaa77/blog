@@ -1,9 +1,43 @@
-<h2>新增文章</h2>
-<a href="{% url 'blogs:home' %}">回到文章列表</a>
+{% extends "layouts/default.html" %}
+{% load static %}
 
-<form method="post" action="/blogs/">
-  {% csrf_token %} {% for field in form %}
-  <div>{{ field.label_tag }} {{ field }}</div>
-  {% endfor %}
-  <input type="submit" value="新增" />
-</form>
+{% block main %}
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+  <div class="main">
+    <div class="article">
+    <div class="title">新增文章</div>
+
+    <form method="post" action="/blogs/">
+      {% csrf_token %} 
+      {% for field in form %}
+      <div class="form-field">
+        {{ field.label_tag }} 
+        {{ field }}
+      </div>
+      {% endfor %}
+      <div class="button-group">
+        <input type="submit" value="新增" class="button" />
+        <a href="{% url 'blogs:home' %}" class="button">回首頁</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+

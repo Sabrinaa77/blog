@@ -85,6 +85,8 @@ body {
   -webkit-box-orient: vertical;
   text-align: justify;
   margin-bottom: 15px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .content_time {
