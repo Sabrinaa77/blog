@@ -76,7 +76,14 @@ body {
 }
 
 .button-group {
-  margin-top: 30px;  /* 上方間距 30px */
+  margin-top: 30px;
+  display: flex;
+  gap: 8px;
+}
+
+.inline-form {
+  display: inline; /* 或 inline-block */
+  margin: 0; /* 移除 form 預設 margin */
 }
 
 .button {

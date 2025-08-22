@@ -22,17 +22,16 @@
         <div class="button-group">
           <a href="{% url 'blogs:edit' blog.id % }" class="button">編輯</a>
           <a href="{% url 'blogs:home' %}" class="button">回到首頁</a>
-        </div>
-        
-        
-        <form
-          action="{% url 'blogs:delete' blog.id %}"
-          method="post"
-          onsubmit="return confirm('確認是否刪除？')"
-        >
+          <form
+            action="{% url 'blogs:delete' blog.id %}"
+            method="post"
+            onsubmit="return confirm('確認是否刪除？')"
+            class="inlin-form"
+          >
           {% csrf_token %}
-          <button type="submit" class="button button-delete">刪除</button>
-        </form>
+            <button type="submit" class="button button-delete">刪除</button>
+          </form>
+        </div>
     </div>
   </body>
 </html>
