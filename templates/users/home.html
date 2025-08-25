@@ -1,0 +1,14 @@
+{% extends 'layouts/default.html' %}
+{% load static %}
+{% block main %}
+<div class="main">
+  {% for user in users %}
+  <div class="article">
+    <div class="title">個人資料</div>
+    <div class="content">個人姓名: {{ user.name }}</div>
+  </div>
+  {% empty %}
+  <p>沒有使用者資料。</p>
+  {% endfor %}
+</div>
+{% endblock %}
