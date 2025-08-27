@@ -1,3 +1,7 @@
+{% extends 'layouts/default.html' %}
+{% load static %}
+
+{% block main %}
 <h3>登入</h3>
 
 <form method="post">
@@ -8,14 +12,15 @@
   <label for="password">Password: </label>
   <input type="password" name="password" required id="password">
 
+  <input type="hidden" name="next" value="{{ request.GET.next }}">
+
   <button type="submit">Login</button>
 </form>
 
 {% if form.errors %}
-<p style="color:red;">帳號或密碼錯誤</p>
+{{ form.non_field_errors }}
 {% endif %}
 
 <p>還沒有帳號嗎？</p>
-<a href="{% url 'accounts:register' %}">
-  <button type="button">註冊</button>
-</a></p>
+<a href="{% url 'accounts:register' %}" class="button">註冊</a>
+{% endblock %}
