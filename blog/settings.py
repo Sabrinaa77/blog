@@ -139,3 +139,7 @@ STATICFILES_DIRS = [
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 DEBUG = True
+
+#登入跳轉頁面
+LOGIN_REDIRECT_URL = '/'   # 登入成功後導向首頁
+LOGOUT_REDIRECT_URL = '/'  # 登出後導向首頁

@@ -3,4 +3,19 @@
 <form method="post">
   {% csrf_token %}
   <label for="username">Username: </label>
-</form>     
+  <input type="text" name="username" required id="username">
+
+  <label for="password">Password: </label>
+  <input type="password" name="password" required id="password">
+
+  <button type="submit">Login</button>
+</form>
+
+{% if form.errors %}
+<p style="color:red;">帳號或密碼錯誤</p>
+{% endif %}
+
+<p>還沒有帳號嗎？</p>
+<a href="{% url 'accounts:register' %}">
+  <button type="button">註冊</button>
+</a></p>
