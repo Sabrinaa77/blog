@@ -7,17 +7,25 @@
     <div class="dropdown dropdown-end">
       <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
         <div class="w-10 rounded-full">
-          <img
-            alt="Avatar"
-            src="https://i.pinimg.com/736x/42/b5/76/42b57666dbe879a032955b85c5dcdcd5.jpg" />
+          <img alt="Avatar" src="https://i.pinimg.com/736x/42/b5/76/42b57666dbe879a032955b85c5dcdcd5.jpg" />
         </div>
       </div>
-      <ul
-        tabindex="0"
-        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow">
-        <li><a class="text-base leading-loose">個人資料</a></li>
-        <li><a href="/blogs/new/" class="text-base leading-loose">新增文章</a></li>
-        <li><a class="text-base leading-loose">登出</a></li>
+      <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow">
+        {% if user.is_authenticated %}
+          <li><a class="text-base leading-loose">個人資料</a></li>
+          <li><a href="/blogs/new/" class="text-base leading-loose">新增文章</a></li>
+          <li>
+            <form method="post" action="{% url 'accounts:logout' %}">
+              {% csrf_token %}
+            
+                <button type="submit" class="text-base leading-loose">登出</button>
+            </form>
+          
+          </li>
+        {% else %}
+          <li><a href="/accounts/login/" class="text-base leading-loose">登入</a></li>
+          <li><a href="/accounts/register/" class="text-base leading-loose">註冊</a></li>
+        {% endif %}
       </ul>
     </div>
   </div>
