@@ -149,7 +149,7 @@ body {
 
 .form-field input,
 .form-field textarea {
-  flex: 1; /* 讓 input/textarea 填滿剩餘空間 */
+  flex: 1; /* 讓 inzput/textarea 填滿剩餘空間 */
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;

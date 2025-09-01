@@ -2,10 +2,42 @@
 {% load static %}
 
 {% block main %}
-<h3>註冊</h3>
+<div class="accounts">
+  <div class="title">註冊</div>
 
-<form method="post">
-  {% csrf_token %} {{ form.as_p }}
-  <button type="submit">Register</button>
-</form>
+  <form method="post">
+    {% csrf_token %}
+
+    <div class="form-field label">
+      <label for="username">Username:</label>
+      <input type="text" name="username" required id="username" />
+    </div>
+
+    <div class="form-field label">
+      <label for="password1">Password:</label>
+      <input type="password" name="password1" required id="password1" />
+    </div>
+
+    <div class="form-field label">
+      <label for="password2">Confirm Password:</label>
+      <input type="password" name="password2" required id="password2" />
+    </div>
+
+    <div class="form-field">
+      <button type="submit" class="button">註冊</button>
+      <a href="{% url 'accounts:login' %}" class="button">回登入</a>
+    </div>
+  </form>
+
+  {% if form.errors %}
+  <div class="error-messages">
+    {{ form.non_field_errors }}
+    {% for field in form %}
+      {% for error in field.errors %}
+        <p>{{ field.label }}: {{ error }}</p>
+      {% endfor %}
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
 {% endblock %}
