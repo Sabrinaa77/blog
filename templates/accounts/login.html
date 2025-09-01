@@ -1,26 +1,32 @@
-{% extends 'layouts/default.html' %}
-{% load static %}
+{% extends 'layouts/default.html' %} {% load static %} {% block main %}
+<div class="accounts">
+  <div class="title">登入</div>
 
-{% block main %}
-<h3>登入</h3>
+  <form method="post">
+    {% csrf_token %}
 
-<form method="post">
-  {% csrf_token %}
-  <label for="username">Username: </label>
-  <input type="text" name="username" required id="username">
+    <div class="form-field label">
+      <label for="username">Username:</label>
+      <input type="text" name="username" required id="username" />
+    </div>
 
-  <label for="password">Password: </label>
-  <input type="password" name="password" required id="password">
+    <div class="form-field label">
+      <label for="password">Password:</label>
+      <input type="password" name="password" required id="password" />
+    </div>
 
-  <input type="hidden" name="next" value="{{ request.GET.next }}">
+    <input type="hidden" name="next" value="{{ request.GET.next }}" />
 
-  <button type="submit">Login</button>
-</form>
+    <div class="form-field">
+      <button type="submit" class="button">登入</button>
+      <a href="{% url 'accounts:register' %}" class="button">註冊</a>
+    </div>
+  </form>
 
-{% if form.errors %}
-{{ form.non_field_errors }}
-{% endif %}
+  {% if form.errors %}
+  <div class="error-messages">{{ form.non_field_errors }}</div>
+  {% endif %}
 
-<p>還沒有帳號嗎？</p>
-<a href="{% url 'accounts:register' %}" class="button">註冊</a>
+  
+</div>
 {% endblock %}

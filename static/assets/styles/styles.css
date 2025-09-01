@@ -82,6 +82,7 @@ body {
   overflow: hidden;
   text-align: justify;
   margin-bottom: 15px;
+  line-height: 1.5;
 }
 
 .content {
@@ -142,7 +143,7 @@ body {
 }
 
 .form-field label {
-  width: 100px;
+  width: 10px;
   font-weight: bold;
 }
 
@@ -153,3 +154,4 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+
