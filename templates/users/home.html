@@ -1,0 +1,33 @@
+{% extends 'layouts/default.html' %} {% load static %} {% block main %}
+<div class="accounts">
+  <div class="title">個人資料</div>
+
+  <div class="accounts-form">
+    {% if users %} {% for user in users %}
+    <div class="form-field">
+      <label class="font-semibold">姓名:</label>
+      <span>{{ user.name }}</span>
+    </div>
+    <div class="form-field">
+      <label class="font-semibold">電子郵件:</label>
+      <span>{{ user.email }}</span>
+    </div>
+    <div class="form-field">
+      <label class="font-semibold">帳號:</label>
+      <span>{{ user.username }}</span>
+    </div>
+    {% endfor %} {% else %}
+    <p class="no-data text-base leading-loose">沒有使用者資料。</p>
+    {% endif %}
+
+    <div class="form-actions mt-6">
+      <a
+        href="{% url 'accounts:logout' %}?next={{ request.path }}"
+        class="btn w-full text-center"
+      >
+        登出
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}
