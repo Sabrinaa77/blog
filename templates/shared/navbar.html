@@ -17,10 +17,8 @@
           <li>
             <form method="post" action="{% url 'accounts:logout' %}">
               {% csrf_token %}
-            
                 <button type="submit" class="text-base leading-loose">登出</button>
             </form>
-          
           </li>
         {% else %}
           <li><a href="/accounts/login/" class="text-base leading-loose">登入</a></li>

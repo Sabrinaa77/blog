@@ -1,30 +1,33 @@
-{% extends 'layouts/default.html' %}
-{% load static %}
-
-{% block main %}
+{% extends 'layouts/default.html' %} {% load static %} {% block main %}
 <div class="accounts">
   <div class="title">個人資料</div>
 
-  {% if users %}
-    {% for user in users %}
-      <div class="article">
-        <div class="content">
-          <p>姓名: {{ user.name }}</p>
-          <p>電子郵件: {{ user.email }}</p>
-          <p>帳號: {{ user.username }}</p>
-        </div>
-      </div>
-    {% endfor %}
-  {% else %}
+  <div class="accounts-form">
+    {% if users %} {% for user in users %}
+    <div class="form-field">
+      <label class="font-semibold">姓名:</label>
+      <span>{{ user.name }}</span>
+    </div>
+    <div class="form-field">
+      <label class="font-semibold">電子郵件:</label>
+      <span>{{ user.email }}</span>
+    </div>
+    <div class="form-field">
+      <label class="font-semibold">帳號:</label>
+      <span>{{ user.username }}</span>
+    </div>
+    {% endfor %} {% else %}
     <p class="no-data text-base leading-loose">沒有使用者資料。</p>
-  {% endif %}
+    {% endif %}
 
-  <ul class="mt-4">
-    <li>
-      <a href="{% url 'accounts:logout' %}?next={{ request.path }}" class="text-base leading-loose">
+    <div class="form-actions mt-6">
+      <a
+        href="{% url 'accounts:logout' %}?next={{ request.path }}"
+        class="btn w-full text-center"
+      >
         登出
       </a>
-    </li>
-  </ul>
+    </div>
+  </div>
 </div>
 {% endblock %}
