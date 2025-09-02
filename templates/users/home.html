@@ -1,14 +1,30 @@
 {% extends 'layouts/default.html' %}
 {% load static %}
+
 {% block main %}
-<div class="main">
-  {% for user in users %}
-  <div class="article">
-    <div class="title">個人資料</div>
-    <div class="content">個人姓名: {{ user.name }}</div>
-  </div>
-  {% empty %}
-  <p>沒有使用者資料。</p>
-  {% endfor %}
+<div class="accounts">
+  <div class="title">個人資料</div>
+
+  {% if users %}
+    {% for user in users %}
+      <div class="article">
+        <div class="content">
+          <p>姓名: {{ user.name }}</p>
+          <p>電子郵件: {{ user.email }}</p>
+          <p>帳號: {{ user.username }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p class="no-data text-base leading-loose">沒有使用者資料。</p>
+  {% endif %}
+
+  <ul class="mt-4">
+    <li>
+      <a href="{% url 'accounts:logout' %}?next={{ request.path }}" class="text-base leading-loose">
+        登出
+      </a>
+    </li>
+  </ul>
 </div>
 {% endblock %}
